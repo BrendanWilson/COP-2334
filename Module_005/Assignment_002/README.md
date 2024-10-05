@@ -2,7 +2,7 @@
 
 ## Screen Shot
 
-[att_text]<image.png>
+![Screenshot for Module 05 Assignment 02](<Screenshot 2024-10-05 160828.png>)
 
 ### Instructions
 

@@ -65,7 +65,7 @@ int main()
             hottestStation=stationNumber;
         }
         cout<<endl;
-}
+    }
     cout<<"Station "<<hottestStation<<" has the hottest average temperature.\n";
     return 0;
 }
