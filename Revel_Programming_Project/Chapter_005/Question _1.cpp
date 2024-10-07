@@ -64,7 +64,7 @@ int main()
             infile>>temperatureRead;
             totalMonthlyTemperature+=temperatureRead;
             totalYearlyTemperature+=temperatureRead;
-            if(oldTemp=0.0)
+            if(oldTemp==0.0)
             {
                 oldTemp=temperatureRead;
             }
