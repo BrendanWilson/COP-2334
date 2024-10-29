@@ -46,8 +46,8 @@ using namespace std;
 int main()
 {
     int dayOfMonth,dayOfYear,monthOfYear,hottestDay,coldestDay,swings;
-    double lowestTemperature=300.0,highestTemperature=0.0,temperatureRead,
-            totalMonthlyTemperature,totalYearlyTemperature,oldTemp;
+    double lowestTemperature=300.0,highestTemperature=0.0,temperatureRead
+           ,totalMonthlyTemperature,totalYearlyTemperature,oldTemp;
     ifstream infile;
     infile.open("WeatherData.txt");
     dayOfYear=0;
@@ -71,6 +71,7 @@ int main()
             else if (temperatureRead>(oldTemp+5)||temperatureRead<(oldTemp-5))
             {
                 swings++;
+                oldTemp=temperatureRead;
             }
             if(temperatureRead>highestTemperature)
             {
@@ -86,10 +87,11 @@ int main()
         cout<<"Average temperature: "<<setprecision(4)<<(totalMonthlyTemperature/30)<<endl;
         cout<<"Number of temperature swings: "<<swings<<endl;
     }
-    cout<<"Average temperature: "<<setprecision(4)<<(totalYearlyTemperature/360)<<endl;
-    cout<<"Day "<<hottestDay<<" was the hottest, with a temperature of "<<setprecision(4)
-        <<highestTemperature<<" degrees Celsius.\n";
-    cout<<"Day "<<coldestDay<<" was the coldest, with a temperature of "<<setprecision(4)
-        <<lowestTemperature<<" degrees Celsius.\n";
+    cout<<"Average temperature: "<<setprecision(1)
+        <<(totalYearlyTemperature/360)<<endl;
+    cout<<"Day "<<hottestDay<<" was the hottest, with a temperature of "
+        <<setprecision(4)<<highestTemperature<<" degrees Celsius.\n";
+    cout<<"Day "<<coldestDay<<" was the coldest, with a temperature of "
+        <<setprecision(4)<<lowestTemperature<<" degrees Celsius.\n";
     return 0;
 }
