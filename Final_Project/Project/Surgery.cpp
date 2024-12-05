@@ -1,4 +1,6 @@
 #include "Surgery.h"
+#include <iostream>
+using namespace std;
 
 // Initializes fixed surgery charges
 Surgery::Surgery()
@@ -17,4 +19,16 @@ void Surgery::performSurgery(PatientAccount& account, int surgeryType)
     { 
         account.addCharges(surgeryCharges[surgeryType]);
     }
+}
+
+//Display a menu of medications
+void Surgery::displaySurgeryMenu()
+{
+    cout << "\n";
+    cout << "1. Kidney Stone Disintegration - Lithotripsy\n";
+    cout << "2. Appendectomy - Inpatient\n";
+    cout << "3. Heart Arrhythmia - Pacemaker Insertion- Inpatient\n";
+    cout << "4. Gallbladder Removal - Laparoscopic - Outpatient\n";
+    cout << "5. Overian Cyst - Removal\n";
+    cout << "Enter surgery type (1-5): ";
 }

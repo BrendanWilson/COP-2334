@@ -1,4 +1,13 @@
 /******************************************************************************
+Patient Management System
+Coders: 
+    Britney Lloyd
+    Brendan Wilson
+
+Data for charges provided by Britney Lloyd
+
+This program is designed to mimic the billing system used in medical facilities.
+
 ******************************************************************************/
 #include "PatientAccount.h"
 #include "Surgery.h"
@@ -27,30 +36,34 @@ int main()
         case 1: 
         {
             int surgeryType;
-            cout << "Enter surgery type (0-4): ";
+            surgery.displaySurgeryMenu();
             cin >> surgeryType;
-            surgery.performSurgery(patient, surgeryType); // Add surgery charges
+            surgery.performSurgery(patient, surgeryType-1); // Add surgery charges
+            cout<<endl;
             break;
         }
         case 2: 
         {
             int medicationType;
-            cout << "Enter medication type (0-4): ";
+            pharmacy.displayPharmacyMenu();
             cin >> medicationType;
-            pharmacy.prescribeMedication(patient, medicationType); // Add medication charges
+            pharmacy.prescribeMedication(patient, medicationType-1); // Add medication charges
+            cout<<endl;
             break;
         }
         case 3: 
         {
             int days;
-            cout << "Enter number of days in hospital: ";
+            cout << "\nEnter number of days in hospital: ";
             cin >> days;
             patient.setDaysInHospital(days); // Update hospital stay days
+            cout<<endl;
             break;
         }
         case 4: 
         {
-            cout << "Total charges: $" << patient.calculateTotal() << endl; // Display total charges
+            cout << "\nTotal charges: $" << patient.calculateTotal() << endl; // Display total charges
+            cout<<endl;
             break;
         }
         case 0:

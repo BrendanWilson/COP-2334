@@ -12,6 +12,7 @@ private:
 public:
     Pharmacy(); // Initializes medication charges
     void prescribeMedication(PatientAccount& account, int medicationType); // Adds medication charges
+    void displayPharmacyMenu();// Displays a selection menu.
 };
 
 #endif // PHARMACY_H

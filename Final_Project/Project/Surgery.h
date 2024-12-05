@@ -12,6 +12,7 @@ private:
 public:
     Surgery(); // Initializes surgery charges
     void performSurgery(PatientAccount& account, int surgeryType); // Adds surgery charges
+    void displaySurgeryMenu();// Displays a selection menu.
 };
 
 #endif // SURGERY_H

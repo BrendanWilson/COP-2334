@@ -4,6 +4,8 @@ OPTION 1: Patient Management System
 
 ## Screenshot
 
+![Final Project Screenshot](<Screenshot 2024-12-05 164102.png>)
+
 ### Instructions
 
 This program should be designed and written by a team of students.
