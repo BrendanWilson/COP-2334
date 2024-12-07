@@ -22,8 +22,9 @@ void Surgery::performSurgery(PatientAccount& account, int surgeryType)
 }
 
 //Display a menu of medications
-void Surgery::displaySurgeryMenu()
+int Surgery::displaySurgeryMenu()
 {
+    int surgeryType=0;
     cout << "\n";
     cout << "1. Kidney Stone Disintegration - Lithotripsy\n";
     cout << "2. Appendectomy - Inpatient\n";
@@ -31,4 +32,19 @@ void Surgery::displaySurgeryMenu()
     cout << "4. Gallbladder Removal - Laparoscopic - Outpatient\n";
     cout << "5. Overian Cyst - Removal\n";
     cout << "Enter surgery type (1-5): ";
+    cin >> surgeryType;
+    while (surgeryType<1||surgeryType>5)
+    {
+        cout<<"Please enter a valid surgery type.\n";
+        surgeryType=0;
+        cout << "\n";
+        cout << "1. Kidney Stone Disintegration - Lithotripsy\n";
+        cout << "2. Appendectomy - Inpatient\n";
+        cout << "3. Heart Arrhythmia - Pacemaker Insertion- Inpatient\n";
+        cout << "4. Gallbladder Removal - Laparoscopic - Outpatient\n";
+        cout << "5. Overian Cyst - Removal\n";
+        cout << "Enter surgery type (1-5): ";
+        cin >> surgeryType;
+    }
+    return surgeryType-1;
 }

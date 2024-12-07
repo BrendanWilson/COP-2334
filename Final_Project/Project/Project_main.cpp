@@ -35,27 +35,30 @@ int main()
         {
         case 1: 
         {
-            int surgeryType;
-            surgery.displaySurgeryMenu();
-            cin >> surgeryType;
-            surgery.performSurgery(patient, surgeryType-1); // Add surgery charges
+            int surgeryType = surgery.displaySurgeryMenu();
+            surgery.performSurgery(patient, surgeryType); // Add surgery charges
             cout<<endl;
             break;
         }
         case 2: 
         {
-            int medicationType;
-            pharmacy.displayPharmacyMenu();
-            cin >> medicationType;
-            pharmacy.prescribeMedication(patient, medicationType-1); // Add medication charges
+            int medicationType=pharmacy.displayPharmacyMenu();
+            pharmacy.prescribeMedication(patient, medicationType); // Add medication charges
             cout<<endl;
             break;
         }
         case 3: 
         {
-            int days;
-            cout << "\nEnter number of days in hospital: ";
+            int days=0;
+            cout << "\nEnter number of days in hospital(in whole days): ";
             cin >> days;
+            while (days<1)
+            {
+                cout <<"\nPlease enter only positive numbers for the number of days in the hospital.";
+                days=0;
+                cout << "\nEnter number of days in hospital(in whole days): ";
+                cin >> days;
+            }
             patient.setDaysInHospital(days); // Update hospital stay days
             cout<<endl;
             break;

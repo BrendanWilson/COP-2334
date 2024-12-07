@@ -22,8 +22,9 @@ void Pharmacy::prescribeMedication(PatientAccount& account, int medicationType)
 }
 
 //Display a menu of medications
-void Pharmacy::displayPharmacyMenu()
+int Pharmacy::displayPharmacyMenu()
 {
+    int medicationType=0;
     cout << "\n";
     cout << "1. Nystatin Oral Susp 100000unit/ml\n";
     cout << "2. Lidocaine 2% Visc Oral Solution\n";
@@ -31,4 +32,18 @@ void Pharmacy::displayPharmacyMenu()
     cout << "4. Advair Diskus 250/50mcg (yellow) 60\n";
     cout << "5. Albuterol HFA Inh (200 Puffs) 6.7gm\n";
     cout << "Enter medication type (1-5): ";
+    cin >> medicationType;
+    while (medicationType<1||medicationType>5)
+    {
+        cout<<"\nPlease enter a valid medication type.\n";
+        medicationType=0;
+        cout << "1. Nystatin Oral Susp 100000unit/ml\n";
+        cout << "2. Lidocaine 2% Visc Oral Solution\n";
+        cout << "3. Ondansetron ODT 4mg Tablets\n";
+        cout << "4. Advair Diskus 250/50mcg (yellow) 60\n";
+        cout << "5. Albuterol HFA Inh (200 Puffs) 6.7gm\n";
+        cout << "Enter medication type (1-5): ";
+        cin >> medicationType;
+    }
+    return medicationType-1;            
 }
